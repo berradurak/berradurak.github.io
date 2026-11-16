@@ -1,0 +1,502 @@
+
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #394735;
+    color: #FAF9F6;
+    font-family: Georgia, serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+.accent {
+    color: #B98A96;
+}
+
+/* NAVIGATION */
+
+header {
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255,255,255,0.13);
+    background: #394735;
+}
+
+nav {
+    max-width: 1450px;
+    margin: auto;
+    padding: 27px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #FAF9F6;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 27px;
+}
+
+.nav-links a {
+    color: #FAF9F6;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #D5A6B2;
+}
+
+/* PROJECT SECTION */
+
+.projects-section {
+    background: #11191A;
+    padding: 65px 6% 85px;
+    text-align: center;
+}
+
+.section-heading {
+    max-width: 800px;
+    margin: 0 auto 38px;
+}
+
+.eyebrow,
+.section-number,
+.project-category,
+.contact-eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #B8C3BD;
+    font-weight: bold;
+}
+
+.section-heading h1 {
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: normal;
+    margin: 18px 0 15px;
+    letter-spacing: 0.5px;
+}
+
+.section-heading p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #BBC6C0;
+    margin: 0;
+}
+
+.project-slider {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.project-slide {
+    display: none;
+    animation: fadeIn 0.65s ease;
+}
+
+.project-slide.active {
+    display: block;
+}
+
+.project-slide > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 3px;
+}
+
+.project-info {
+    padding-top: 25px;
+}
+
+.project-info h2 {
+    font-size: clamp(27px, 4vw, 42px);
+    font-weight: normal;
+    margin: 13px 0 10px;
+}
+
+.project-info p {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #B6C3BF;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.project-info a {
+    display: inline-block;
+    background: #632F3C;
+    color: #FFFFFF;
+    border: 1px solid #8A5863;
+    padding: 15px 29px;
+    margin-top: 24px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    transition: all 0.3s;
+}
+
+.project-info a:hover {
+    background: #7A3B4B;
+    transform: translateY(-3px);
+}
+
+/* SLIDER CONTROLS */
+
+.slider-controls {
+    max-width: 1100px;
+    margin: 33px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.slider-controls > button {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.slider-controls > button:hover {
+    background: #632F3C;
+}
+
+#slide-counter {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #D9E0DC;
+}
+
+.slider-dots {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    background: #66716D;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: #D8B5BF;
+    transform: scale(1.3);
+}
+
+/* CONTENT SECTIONS */
+
+.content-section {
+    padding: 110px 8%;
+}
+
+.section-number {
+    margin-bottom: 48px;
+    color: #C9D3C7;
+}
+
+.about-section {
+    background: #394735;
+}
+
+.about-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: start;
+}
+
+.about-grid h2 {
+    font-size: clamp(38px, 5vw, 65px);
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.about-grid h2 em {
+    color: #E2C8C6;
+    font-weight: normal;
+}
+
+.about-copy p {
+    color: #E0E4DC;
+    font-size: 16px;
+    line-height: 1.95;
+    margin: 0 0 22px;
+}
+
+.about-copy .intro-text {
+    font-size: 21px;
+    color: #FFFFFF;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: #E8C3CB;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #E8C3CB;
+    padding-bottom: 9px;
+}
+
+/* EDUCATION & EXPERIENCE */
+
+.education-section {
+    background: #F1EDE5;
+    color: #28362E;
+}
+
+.experience-section {
+    background: #E5E0D5;
+    color: #28362E;
+}
+
+.education-section .section-number,
+.experience-section .section-number {
+    color: #67756B;
+}
+
+.section-title {
+    font-size: clamp(40px, 6vw, 68px);
+    font-weight: normal;
+    margin: 0 0 60px;
+}
+
+.detail-row {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
+    padding: 32px 0;
+    border-top: 1px solid rgba(40,54,46,0.25);
+    max-width: 1200px;
+}
+
+.detail-date,
+.detail-location {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    color: #657568;
+    font-weight: bold;
+}
+
+.detail-content h3 {
+    font-size: 30px;
+    font-weight: normal;
+    margin: 0 0 10px;
+}
+
+.detail-content p {
+    font-family: Arial, sans-serif;
+    color: #526055;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 5px 0;
+}
+
+.detail-content .detail-subtitle {
+    color: #394735;
+    font-weight: bold;
+}
+
+.detail-location {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* CONTACT */
+
+.contact-section {
+    padding: 110px 8% 130px;
+    background: #632F3C;
+    text-align: center;
+}
+
+.contact-section .section-number {
+    text-align: left;
+}
+
+.contact-eyebrow {
+    color: #E4C7CF;
+}
+
+.contact-section h2 {
+    font-size: clamp(48px, 8vw, 90px);
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+.contact-section .accent {
+    color: #D9B6BF;
+}
+
+.contact-description {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #EBDDE0;
+}
+
+.contact-button {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 17px 34px;
+    background: #FAF9F6;
+    color: #632F3C;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+}
+
+.contact-button:hover {
+    background: #E6D9D7;
+    transform: translateY(-3px);
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px 8%;
+    background: #11191A;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #AAB5AF;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 22px;
+        padding: 24px 5%;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .projects-section {
+        padding: 50px 15px 65px;
+    }
+
+    .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .section-heading p {
+        font-size: 13px;
+    }
+
+    .project-slide > img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .slider-controls {
+        gap: 15px;
+    }
+
+    .content-section {
+        padding: 75px 7%;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .detail-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .contact-section {
+        padding: 75px 7% 95px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
